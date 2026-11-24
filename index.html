@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brent Redmond - ABC Warehouse</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      background: #ffffff;
+      color: #000000;
+      text-align: center;
+    }
+    #qrcode {
+      padding: 18px;
+      border: 2px solid #000000;
+      background: #ffffff;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin: 16px 0 4px;
+    }
+    p {
+      margin: 3px 0;
+      font-size: 0.95rem;
+    }
+    .scan-note {
+      margin-top: 12px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="qrcode"></div>
+  <h1>Brent Redmond</h1>
+  <p>Assistant Store Manager • ABC Warehouse</p>
+  <p>Cell: 248-579-7116 | Work: 616-784-1470</p>
+  <p>3165 Alpine Ave NW, Walker, MI 49644</p>
+  <p class="scan-note">Scan with Camera to Save Contact</p>
+
+  <script>
+    const vcard = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      "N:Redmond;Brent;;;",
+      "FN:Brent Redmond",
+      "ORG:ABC Warehouse",
+      "TITLE:Assistant Store Manager",
+      "TEL;TYPE=CELL,VOICE:+12485797116",
+      "TEL;TYPE=WORK,VOICE:+16167841470",
+      "EMAIL;TYPE=WORK,INTERNET:br15288@abcwarehouse.com",
+      "ADR;TYPE=WORK:;;3165 Alpine Ave NW;Walker;MI;49644;USA",
+      "END:VCARD"
+    ].join("\n");
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: vcard,
+      width: 280,
+      height: 280,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  </script>
+</body>
+  </html>
+  
